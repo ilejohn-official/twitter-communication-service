@@ -13,9 +13,4 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return response()->json([
-        'version' => $router->app->version(), 
-        'message' => 'Welcome to Twitter comunication service Api'
-    ]);
-});
+$router->get('/', 'WelcomeController@index');
