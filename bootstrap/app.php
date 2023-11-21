@@ -78,9 +78,10 @@ $app->configure('app');
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
 
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
+$app->routeMiddleware([
+    'auth' => App\Http\Middleware\Authenticate::class,
+    'user-auth' => App\Http\Middleware\UserAuthenticate::class,
+]);
 
 /*
 |--------------------------------------------------------------------------
@@ -97,6 +98,7 @@ $app->configure('app');
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
+$app->register(App\Providers\CommunicationServiceProvider::class);
 $app->register(\SwaggerLume\ServiceProvider::class);
 
 /*
